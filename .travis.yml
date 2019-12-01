@@ -5,7 +5,7 @@ before_install:
 - docker build -t docker.pkg.github.com/mineduino/standardbroker/broker:$TRAVIS_BRANCH
   .
 script:
-- echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+- echo "$DOCKER_PASSWORD" | docker login docker.pkg.github.com -u "$DOCKER_USERNAME" --password-stdin
 - docker push docker.pkg.github.com/mineduino/standardbroker/broker:$TRAVIS_BRANCH
 env:
   global:
